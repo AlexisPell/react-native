@@ -9,7 +9,7 @@ import ContactSettings from '../screens/ContactSettings/ContactSettings';
 interface HomeNavigatorProps {}
 
 const HomeNavigator: React.FC<HomeNavigatorProps> = ({}) => {
-  const HomeStack = createStackNavigator();
+  const HomeStack = createStackNavigator<any>();
 
   return (
     <HomeStack.Navigator initialRouteName={SCREENS.CONTACTS.CONTACTS}>

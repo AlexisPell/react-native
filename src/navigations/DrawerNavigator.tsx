@@ -5,7 +5,7 @@ import HomeNavigator from './HomeNavigator';
 
 interface DrawerNavigatorProps {}
 const DrawerNavigator: React.FC<DrawerNavigatorProps> = ({}) => {
-  const Drawer = createDrawerNavigator();
+  const Drawer = createDrawerNavigator<any>();
 
   return (
     <Drawer.Navigator screenOptions={{headerShown: false}}>

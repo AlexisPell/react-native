@@ -1,13 +1,14 @@
-import {NavigationContainer} from '@react-navigation/native';
 import React from 'react';
-import {StyleSheet} from 'react-native';
+import {useSelector} from 'react-redux';
+import {NavigationContainer} from '@react-navigation/native';
 import AuthNavigator from './AuthNavigator';
 import DrawerNavigator from './DrawerNavigator';
+import {authSelectors} from '../slices/authSlice';
 
 interface AppNavContainerProps {}
 
 const AppNavContainer: React.FC<AppNavContainerProps> = ({}) => {
-  const isLoggedIn = true;
+  const isLoggedIn = useSelector(authSelectors.isLoggedIn);
   return (
     <NavigationContainer>
       {isLoggedIn ? <DrawerNavigator /> : <AuthNavigator />}
@@ -16,5 +17,3 @@ const AppNavContainer: React.FC<AppNavContainerProps> = ({}) => {
 };
 
 export default AppNavContainer;
-
-const styles = StyleSheet.create({});
